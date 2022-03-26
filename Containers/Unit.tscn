@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Art/monochrome-transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://Containers/Stats.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Containers/Unit.gd" type="Script" id=3]
+[ext_resource path="res://Containers/UnitUi.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/Shaders/Main.tres" type="Material" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47, 68 )
+
+[node name="Unit" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 94.0
+margin_bottom = 136.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitSprite" type="Sprite" parent="."]
+material = ExtResource( 5 )
+position = Vector2( 46, 35 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 560, 320, 16, 16 )
+
+[node name="UnitUi" parent="." instance=ExtResource( 4 )]
+margin_left = 8.0
+margin_top = 69.0
+margin_right = 86.0
+margin_bottom = 134.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Stats" parent="." instance=ExtResource( 2 )]
+position = Vector2( 47, 35 )
+unitType = "wizard"
+totalEnergy = 5
+
+[node name="ContainerBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContainerBox"]
+position = Vector2( 47, 68 )
+shape = SubResource( 1 )
+
+[node name="ItemBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemBox"]
+position = Vector2( 47, 68 )
+shape = SubResource( 1 )

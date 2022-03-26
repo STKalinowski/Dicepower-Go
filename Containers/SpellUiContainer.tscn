@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/monochrome-transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://Containers/SpellUiContainer.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 57, 73.5 )
+
+[node name="SpellUiContainer" type="Node2D"]
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 63.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 114, 147 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 57, 73.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 57, 22 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 624, 224, 16, 16 )
+
+[node name="HoldDie" type="Node2D" parent="."]
+
+[node name="HoldSpells" type="Node2D" parent="."]

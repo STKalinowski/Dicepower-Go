@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Items/Die.gd" type="Script" id=1]
+[ext_resource path="res://Items/itemBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/monochrome-transparent_packed.png" type="Texture" id=3]
+[ext_resource path="res://Art/Shaders/Main.tres" type="Material" id=4]
+
+[node name="Die" type="Node2D"]
+material = ExtResource( 4 )
+z_index = 2
+script = ExtResource( 1 )
+
+[node name="Face" type="Sprite" parent="."]
+use_parent_material = true
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 560, 320, 16, 16 )
+
+[node name="Border" type="Sprite" parent="."]
+use_parent_material = true
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 624, 224, 16, 16 )
+
+[node name="itemBox" parent="." instance=ExtResource( 2 )]
+
+[editable path="itemBox"]

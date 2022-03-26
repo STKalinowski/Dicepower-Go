@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Art/monochrome-transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://Containers/UnitUi.gd" type="Script" id=2]
+[ext_resource path="res://Art/UnitUiTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Art/Shaders/Main.tres" type="Material" id=4]
+
+[sub_resource type="Theme" id=1]
+HBoxContainer/constants/separation = 4
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+
+[node name="UnitUi" type="VBoxContainer"]
+material = ExtResource( 4 )
+margin_left = -25.0
+margin_top = 25.0
+margin_right = 36.0
+margin_bottom = 95.0
+rect_scale = Vector2( 1, 0.994157 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitArmour" type="HBoxContainer" parent="."]
+use_parent_material = true
+margin_right = 78.0
+margin_bottom = 19.0
+
+[node name="Control" type="Control" parent="UnitArmour"]
+use_parent_material = true
+margin_right = 16.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="HeartIcon" type="Sprite" parent="UnitArmour/Control"]
+use_parent_material = true
+position = Vector2( 9, 6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 32, 16, 16 )
+
+[node name="CurrentArmour" type="Label" parent="UnitArmour"]
+use_parent_material = true
+margin_left = 20.0
+margin_right = 30.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "5"
+
+[node name="UnitHealth" type="HBoxContainer" parent="."]
+use_parent_material = true
+margin_top = 23.0
+margin_right = 78.0
+margin_bottom = 42.0
+theme = SubResource( 1 )
+
+[node name="Control" type="Control" parent="UnitHealth"]
+use_parent_material = true
+margin_right = 16.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="HeartIcon" type="Sprite" parent="UnitHealth/Control"]
+use_parent_material = true
+position = Vector2( 9, 6.00001 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 672, 160, 16, 16 )
+
+[node name="CurrentHp" type="Label" parent="UnitHealth"]
+use_parent_material = true
+margin_left = 20.0
+margin_right = 40.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "10"
+
+[node name="Slash" type="Label" parent="UnitHealth"]
+use_parent_material = true
+margin_left = 44.0
+margin_right = 54.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalHp" type="Label" parent="UnitHealth"]
+use_parent_material = true
+margin_left = 58.0
+margin_right = 78.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "25"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitEnergy" type="HBoxContainer" parent="."]
+use_parent_material = true
+margin_top = 46.0
+margin_right = 78.0
+margin_bottom = 65.0
+
+[node name="Control" type="Control" parent="UnitEnergy"]
+use_parent_material = true
+margin_right = 16.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="HeartIcon" type="Sprite" parent="UnitEnergy/Control"]
+use_parent_material = true
+position = Vector2( 9, 6.00002 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 16, 16, 16 )
+
+[node name="CurrentEnergy" type="Label" parent="UnitEnergy"]
+use_parent_material = true
+margin_left = 20.0
+margin_right = 30.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "1"
+
+[node name="Slash" type="Label" parent="UnitEnergy"]
+use_parent_material = true
+margin_left = 34.0
+margin_right = 44.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalEnergy" type="Label" parent="UnitEnergy"]
+use_parent_material = true
+margin_left = 48.0
+margin_right = 58.0
+margin_bottom = 19.0
+theme = ExtResource( 3 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Art/Shaders/Sub.tres" type="Material" id=1]
+[ext_resource path="res://Palette.gd" type="Script" id=2]
+[ext_resource path="res://Art/Shaders/Cursor.tres" type="Material" id=3]
+[ext_resource path="res://Art/Shaders/Main.tres" type="Material" id=4]
+[ext_resource path="res://Art/Shaders/Back.tres" type="Material" id=5]
+[ext_resource path="res://Art/Shaders/Contrast.tres" type="Material" id=6]
+
+[node name="Palette" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Main" type="Node2D" parent="."]
+material = ExtResource( 4 )
+
+[node name="Sub" type="Node2D" parent="."]
+material = ExtResource( 1 )
+
+[node name="Cursor" type="Node2D" parent="."]
+material = ExtResource( 3 )
+
+[node name="Back" type="Node2D" parent="."]
+material = ExtResource( 5 )
+
+[node name="Contrast" type="Node2D" parent="."]
+material = ExtResource( 6 )
